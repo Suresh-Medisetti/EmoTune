@@ -13,7 +13,7 @@ const ResetPassword = () => {
     if (newPass !== confirm) return setMessage("Passwords don't match.");
 
     try {
-      const res = await axios.post('http://127.0.0.1:8000/forgot-password', {
+      const res = await axios.post(`${process.env.REACT_APP_API_URL}/forgot-password`, {
         email,
         new_password: newPass
       });

@@ -31,7 +31,7 @@ const Login = ({ onLoginSuccess }) => {
     setErrorMessage('');
     try {
       if (isRegistering) {
-        await axios.post('http://127.0.0.1:8000/register', {
+        await axios.post(`${process.env.REACT_APP_API_URL}/register`, {
           firstname: formData.firstname,
           lastname: formData.lastname,
           email: formData.email,
@@ -41,7 +41,7 @@ const Login = ({ onLoginSuccess }) => {
         alert('Registered successfully! Please log in.');
         setIsRegistering(false);
       } else {
-        const res = await axios.post('http://127.0.0.1:8000/login', {
+        const res = await axios.post(`${process.env.REACT_APP_API_URL}/login`, {
           email: formData.email,
           password: formData.password
         });
@@ -65,7 +65,7 @@ const Login = ({ onLoginSuccess }) => {
   if (!forgotEmail) return setForgotError('Please enter your registered email.');
 
   try {
-    const res = await axios.post('http://127.0.0.1:8000/send-reset-link', new FormData(Object.entries({ email: forgotEmail })));
+    const res = await axios.post( `${process.env.REACT_APP_API_URL}/send-reset-link`, new FormData(Object.entries({ email: forgotEmail })));
     setForgotMessage(res.data?.message || 'Reset link sent successfully.');
     setForgotError('');
     setTimeout(() => setShowForgot(false), 1500);

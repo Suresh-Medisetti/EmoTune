@@ -11,7 +11,7 @@ const Register = ({ goToLogin }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://127.0.0.1:8000/register', form);
+      await axios.post(`${process.env.REACT_APP_API_URL}/register`, form);
       alert('Registration successful! Please login.');
       goToLogin();
     } catch (err) {

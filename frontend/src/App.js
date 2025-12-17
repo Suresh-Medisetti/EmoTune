@@ -140,7 +140,7 @@ const App = () => {
       const imageFile = dataURLtoFile(imageDataUrl, "capture.jpeg");
       const formData = new FormData();
       formData.append("file", imageFile);
-      const res = await axios.post("http://127.0.0.1:8000/detect-emotion", formData);
+      const res = await axios.post(`${process.env.REACT_APP_API_URL}/detect-emotion`, formData);
       const { emotion, confidence } = res.data;
       setEmotion(emotion);
       setConfidence(confidence);
@@ -155,7 +155,7 @@ const App = () => {
 
   const getMusicRecommendations = async (emotion) => {
     try {
-      const res = await axios.get("http://127.0.0.1:8000/recommendations", {
+      const res = await axios.get(`${process.env.REACT_APP_API_URL}/recommendations`, {
         params: { emotion, language },
       });
       setSongs(res.data);

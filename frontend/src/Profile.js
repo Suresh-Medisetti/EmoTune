@@ -13,7 +13,7 @@ export default function Profile({ onBackHome, onLogout }) {
   const [editing, setEditing] = useState(false);
   const [pwd, setPwd] = useState({ old_password: "", new_password: "" });
 
-  const API_BASE = "http://127.0.0.1:8000";
+  const API_BASE = process.env.REACT_APP_API_URL;
   const email = localStorage.getItem("email");
 
   useEffect(() => {
