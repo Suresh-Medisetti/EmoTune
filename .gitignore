@@ -13,3 +13,7 @@ build/
 .vscode/
 .idea/
 .DS_Store
+
+# Runtime files
+backend/*.db
+backend/.cache/
