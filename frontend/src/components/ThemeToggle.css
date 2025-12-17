@@ -1,0 +1,45 @@
+/* src/components/ThemeToggle.css */
+.theme-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 70px;
+  height: 34px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 17px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+}
+
+.toggle-ball {
+  width: 24px;
+  height: 24px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  transition: transform 0.3s ease;
+}
+
+.toggle-ball.dark {
+  transform: translateX(36px);
+}
+
+.theme-toggle .icon {
+    font-size: 16px;
+    color: #f1c40f; /* Sun color */
+    transition: opacity 0.3s ease;
+}
+
+.theme-toggle .icon.moon {
+    color: #f39c12; /* Moon color */
+}
+
+.theme-toggle .icon:not(.active) {
+    opacity: 0.3;
+}

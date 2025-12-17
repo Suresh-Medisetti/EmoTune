@@ -1,0 +1,368 @@
+/* Login.css */
+
+/* Use the image as a background for the login page */
+.login-backdrop {
+    /* Use a placeholder image or a solid background for testing */
+    background: url('https://images.unsplash.com/photo-1542879105-4f7f52f3e8b0?fit=crop&w=1200&q=80') center center / cover no-repeat;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.login-card {
+    /* Glassmorphism Effect */
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 40px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    color: white;
+    text-align: center;
+}
+
+.login-card h1 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 15px 40px 15px 20px;
+    border: none;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    font-size: 1rem;
+    outline: none;
+    transition: background 0.3s ease;
+}
+
+.input-group input:focus {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.input-group input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.input-group i {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.1rem;
+}
+
+/* Login Options (Remember Me / Forgot Password) */
+.login-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    font-size: 0.9rem;
+}
+
+.login-options label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.remember-checkbox {
+    /* Basic styling for checkbox to look better */
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border: 1px solid white;
+    border-radius: 3px;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.remember-checkbox:checked {
+    background-color: #4A00E0;
+    border-color: #4A00E0;
+}
+
+.forgot-password {
+    color: #fdbb2d;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.forgot-password:hover {
+    color: #ffcc5c;
+}
+
+/* Main Login Button */
+.login-button {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(to right, #4A00E0, #8E2DE2); /* Primary Button Style */
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    margin-bottom: 30px;
+}
+
+.login-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(142, 45, 226, 0.5);
+}
+
+/* Separator */
+.separator {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.separator hr {
+    flex: 1;
+    border: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.or-text {
+    padding: 0 15px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Social Login */
+.social-login {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.social-button {
+    flex: 1;
+    padding: 12px 0;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    background: transparent;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.social-button.google { background-color: rgba(234, 67, 53, 0.1); }
+.social-button.facebook { background-color: rgba(66, 103, 178, 0.1); }
+
+.social-button:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* Switch Mode (Register/Login toggle) */
+.switch-mode {
+    margin-top: 25px;
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.switch-mode a {
+    color: #fdbb2d;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Error Message Style */
+.error-message {
+    color: #c5c0c0;
+    margin-bottom: 15px;
+    font-size: 1.0rem;
+    text-align: center;
+}
+
+/* 🎵 App Title at Top Center
+.app-title {
+  font-size: 3.2rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 40px;
+  background: linear-gradient(90deg, #ff0080, #ff8c00, #40e0d0, #ff0080);
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientFlow 6s ease infinite;
+  text-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+}
+
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+} */
+
+/* 🎵 EmoTune Title Section (Fixed Above Card) */
+.login-page-header {
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  text-align: center;
+  color: white;
+  z-index: 10;
+}
+
+.app-title {
+  font-size: 3.2rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  background: linear-gradient(90deg, #ff0080, #ff8c00, #40e0d0, #ff0080);
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientFlow 6s ease infinite;
+}
+
+.app-subtitle {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 400;
+  letter-spacing: 0.6px;
+}
+
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Add top margin to push card below title */
+.login-card {
+  margin-top: 120px;
+}
+/* Forgot password modal backdrop */
+.forgot-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 60;
+}
+
+/* Modal card */
+.forgot-modal {
+  width: 100%;
+  max-width: 420px;
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.12);
+  padding: 22px;
+  color: white;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+}
+
+/* smaller modal heading */
+.forgot-modal h3 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-size: 1.25rem;
+}
+
+/* success message for forgot password */
+.success-message {
+  color: #8EF6A6;
+  margin-top: 8px;
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+/* optional link-like button style */
+.link-like {
+  color: #fdbb2d;
+  text-decoration: underline;
+  background: transparent;
+  cursor: pointer;
+}
+/* Password wrapper for eye icon */
+.password-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-wrapper input {
+  width: 100%;
+  padding-right: 40px; /* space for icon */
+}
+
+.eye-icon {
+  position: absolute;
+  right: 12px;
+  cursor: pointer;
+  color: #888;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+.eye-icon:hover {
+  color: #fdbb2d;
+}
+/* For password eye toggle */
+.password-field {
+  position: relative;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #fdbb2d;
+  cursor: pointer;
+  font-size: 1.1rem;
+}
+
+.toggle-password:hover {
+  color: #fff;
+}
+
+/* For "Login/Register" links and Forgot Password */
+.link-button {
+  background: none;
+  border: none;
+  color: #fdbb2d;
+  cursor: pointer;
+  font-size: 1rem;
+  text-decoration: underline;
+  padding: 0;
+}
+
+.link-button:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+
+
