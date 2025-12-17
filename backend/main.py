@@ -22,14 +22,17 @@ from email.mime.multipart import MIMEMultipart
 load_dotenv()
 app = FastAPI()
 
-origins = ["http://localhost:3000"]
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,
+    allow_origins=[
+        "http://localhost:3000",
+        "https://emo-tune-tan.vercel.app"
+    ],
     allow_credentials=True,
     allow_methods=["*"],
-    allow_headers=["*"]
+    allow_headers=["*"],
 )
+
 
 # ====================== DATABASE SETUP ======================
 conn = sqlite3.connect("emotune_users.db", check_same_thread=False)
